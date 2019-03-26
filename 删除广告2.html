@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			img{
+				width: 200px;
+				height: 500px;
+			}
+			ul{
+				width: 300px;
+				text-align: center;
+				list-style: none;
+			}
+			img,ul{
+				float: left;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var imgs=document.getElementsByTagName("img");
+				setInterval(function(){
+					for(var i=0;i<imgs.length;i++){
+						imgs[i].style.display="none";
+					}
+				},3000);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<img src="img/kkk.png">
+			<ul>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+				<li>kkkkkkkkkkkk</li>
+			</ul>
+			<img src="img/kkk.png">
+		</div>
+	</body>
+</html>

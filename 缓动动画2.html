@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: relative;
+				top:50px;
+				left: 0;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var btn=document.getElementById("btn");
+				var div=document.getElementById("div");
+				btn.onclick=function(){
+				var	taget=500;
+				var	leader=0;
+				setInterval(function(){
+					leader=leader+(taget-leader)/10;
+					div.style.left=leader+"px";
+					
+				},30);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button id="btn">点我</button>
+		<div id="div"></div>
+	</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+				list-style:none;
+			}
+			#box{
+				width: 490px;
+				height: 170px;
+				text-align: center;
+				margin: 0px auto;
+				margin-top: 100px;
+				padding: 5px;
+				vertical-align: middle;
+				border:1px solid salmon ;
+				position:relative;
+			}
+			#inner{
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				position: relative;
+			}
+			#inner ul{
+				width: 500%;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#inner ul li{
+				float: left;
+			}
+			#ols{
+				width: 120px;
+				height:18px;
+				position:absolute;
+				bottom:10px;
+				left: 50%;
+				margin-left: -60px;
+			}
+			#ols li{
+				background-color:white;
+				margin-left: 3px;
+				margin-right: 3px;
+				width: 18px;
+				float: left;
+				cursor: pointer;
+			}
+			.cc{
+				background-color: #FA8072 !important;
+			}
+			#roow{
+				height:20px ;
+				width: 100%;
+				position: absolute;
+				top: 50%;
+				margin-top: -10px;
+				left: 0;
+			}
+			#roow span{
+				background: rgba(0,0,0,.5);
+				width: 20px;
+				height: 20px;
+				color: white;
+				font-size: 20px;
+				font-weight: 700;
+				text-align: center;
+				line-height: 20px;
+				cursor: pointer;
+				display: none;
+
+			}
+			#left{
+				float: left;
+				border-bottom-right-radius: 20px;
+				border-top-right-radius: 20px;
+
+			}
+			#right{
+				float: right;
+				border-bottom-right-radius: 20px;
+				border-top-right-radius: 20px;
+
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var uls=document.getElementById("uls");
+				var ols=document.getElementById("ols").children;
+				var box=document.getElementById("box");
+				var span_left=document.getElementById("left");
+				var span_right=document.getElementById("right");
+				var target=0;
+				var leader=0;
+				var clicknum=0;
+				for(var i=0;i<ols.length;i++){
+					ols[i].index=i;
+					ols[i].onmousemove=function(){
+						target=-this.index*490;
+						//
+						clicknum=this.index;
+						for(var i=0;i<ols.length;i++){
+							ols[i].className=""
+						}
+						this.className="cc";
+					}
+				}
+				setInterval(fn,20);
+				function fn(){
+					leader=leader+(target-leader)/10;
+					uls.style.left=leader+"px";
+				}
+				box.onmousemove=function(){
+					span_left.style.display="block";
+					span_right.style.display="block";
+				}
+				box.onmouseout=function(){
+					span_left.style.display="none";
+					span_right.style.display="none";
+				}
+				span_left.onclick=function(){
+					
+					if(target<=-4*490){
+						
+					}else{
+						clicknum++;
+					}
+					target=-clicknum*490;
+					for(var i=0;i<ols.length;i++){
+						ols[i].className="";
+					}
+					ols[clicknum].className="cc";
+				}
+				
+				span_right.onclick=function(){
+					
+					if(target>=0){
+						
+					}else{
+						clicknum--;
+					}
+					target=-clicknum*490;
+					for(var i=0;i<ols.length;i++){
+						ols[i].className="";
+					}
+					ols[clicknum].className="cc";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="inner">
+				<ul id="uls">
+					<li><img src="img/01.jpg"></li>
+					<li><img src="img/02.jpg"></li>
+					<li><img src="img/03.jpg"></li>
+					<li><img src="img/04.jpg"></li>
+					<li><img src="img/05.jpg"></li>
+				</ul>
+				<div id="roow">
+					<span id="left"><</span>
+					<span id="right">></span>
+				</div>
+			</div>
+			<ol id="ols">
+				<li class="cc">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ol>
+		</div>
+	</body>
+</html>

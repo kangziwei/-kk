@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: noe;
+			}
+			img{
+				vertical-align: top;
+			}
+			#box{
+				width:490px;
+				height: 170px;
+				border: 1px solid green;
+				margin: 100px auto;
+				padding: 10px;
+				position:relative;
+			}
+			#nei{
+				width: 100%;
+				height: 170px;
+				overflow: hidden;
+				position: relative;
+			}
+			#uls{
+				width: 100%;
+				height: 170px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			#nei ul li{
+				display: inline-block;
+				float: left;
+			}
+			#ols{
+				list-style: none;
+				width: 120px;
+				height: 17px;
+				position: absolute;
+				bottom: 12px;
+				left: 50%;
+				margin-left: -60px;
+			}
+			#ols li{
+				float: left;
+				width: 18px;
+				height: 17px;
+				text-align: center;
+				margin-left: 3px;
+				margin-right: 3px;
+				cursor: pointer;
+				background-color: white;
+			}
+			span{
+				position: absolute;
+				top: 50%;
+				width: 20px;
+				height: 20px;
+				color: white;
+				text-align: center;
+				/*display: none;
+				cursor: pointer;*/
+				background-color: rgba(0,0,0,0.6);
+			}
+			#spanleft{
+				left: 0;
+				border-bottom-right-radius: 10px;
+				border-top-right-radius: 10px;
+			}
+			#spanright{
+				right: 0;
+				border-bottom-left-radius: 10px;
+				border-top-left-radius: 10px;
+			}
+			#ols .cc{
+				background-color: palevioletred;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="nei">
+				<span id="spanleft"><</span>
+				<span id="spanright">></span>
+				<ul id="uls">
+					<li><img src="img/01.jpg"></img></li>
+					<li><img src="img/02.jpg"></img></li>
+					<li><img src="img/03.jpg"></img></li>
+					<li><img src="img/04.jpg"></img></li>
+					<li><img src="img/05.jpg"></img></li>
+				</ul>
+			</div>
+			<ol id="ols">
+				<li class="cc">1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+			</ol>
+		</div>
+	</body>
+<!--	<script>
+		function $(id){
+			return document.getElementById(id);
+		}
+		
+		var ols=$("ols").children;
+		var uls=document.getElementById("uls");
+		var spanleft=$("spanleft");
+		var spanright=$("spanright");
+		var leader=0;
+		var target=0;
+		var num=0
+		var box=document.getElementById("box")
+		console.log(ols.length);
+		for(var i=0;i<ols.length;i++){
+			ols[i].index=i;
+			ols[i].onmousemove=function(){
+				target=-this.index*490;
+				num=-this.index;
+				for (var i=0;i<ols.length;i++) {
+					ols[i].className="";
+				}
+				this.className="cc";
+			}
+		}
+		setInterval(fn,30);
+		function fn(){
+			leader=leader+(target-leader)/10;
+			uls.style.left=leader+"px";
+		}
+		$("box").onmousemove=function(){
+			spanleft.style.display="block";
+			spanright.style.display="block";
+		}
+		$("box").onmouseout=function(){
+			spanleft.style.display="none";
+			spanright.style.display="none";
+		}
+		
+	</script>
+--></html>

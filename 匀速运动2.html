@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			#btn{
+				width: 60px;
+				height: 30px;
+			}
+			#div{
+				width:100px;
+				height:100px;
+				background-color: red;
+				position: absolute;
+				top: 70px;
+				left: 0;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				function $(id){
+					return document.getElementById(id);
+				}
+				var num=0;
+				$("btn").onclick=function(){
+					setInterval(function(){
+						num+=10;
+						if(num>=500){
+							return;
+						}
+						$("div").style.left=num+"px";
+					},30);
+				}
+			}
+		</script>
+		
+	</head>
+	<body>
+		<button id="btn">点我</button>
+		<div id="div"></div>
+	</body>
+</html>

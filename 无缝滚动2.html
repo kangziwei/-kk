@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+				list-style: none;
+			}
+			#box{
+				height:200px ;
+				width: 600px;
+				margin: 0px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			#uls{
+				margin-top: 50px;
+				width: 500%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			#uls li img{
+				display: block;
+				float: left;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var uls=document.getElementById("uls");
+				var box=document.getElementById("box");
+				var num=0;
+				var timer=null;
+				timer=setInterval(function(){
+					num-=10;
+					if(num<=-1200){
+						num=0;
+					}else{
+						num--;
+					}
+					uls.style.left=num+"px";
+				},30);
+				box.onmousemove=function(){
+					clearInterval(timer);
+				}
+				box.onmouseout=function(){
+					timer=setInterval(function(){
+					num-=5;
+					if(num<=-1200){
+						num=0;
+					}else{
+						num--;
+					}
+					uls.style.left=num+"px";
+				},30);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<ul id="uls">
+				<li><img src="img/imgs/01.jpg"></li>
+				<li><img src="img/imgs/02.jpg"></li>
+				<li><img src="img/imgs/03.jpg"></li>
+				<li><img src="img/imgs/04.jpg"></li>
+				<li><img src="img/imgs/01.jpg"></li>
+				<li><img src="img/imgs/02.jpg"></li>
+			</ul>
+		</div>
+	</body>
+</html>
